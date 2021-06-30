@@ -20,7 +20,7 @@ public class RESTController {
     @GetMapping(value = {"", "/"})
     public String hello(){
 
-        return "Hi, it's me!!!!!!!!!!!!!!!!!!!!!";
+        return "Hello, it's me!!!!!!!!!!!!!!!!!!!!!";
     }
 
 
