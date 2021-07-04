@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6239aea-628f-4d89-a290-ffcad2aa4c9f" name="Default Changelist" comment="Third commit, testing from the other side">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/dao/JobsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/dao/JobsDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/services/EDAService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/services/EDAService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/controllers/RESTController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/controllers/RESTController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/dao/JobsDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/dao/JobsDAO.class" afterDir="false" />
-    </list>
+    <list default="true" id="f6239aea-628f-4d89-a290-ffcad2aa4c9f" name="Default Changelist" comment="Testing DAO" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,7 +85,7 @@
       <workItem from="1625093271921" duration="718000" />
       <workItem from="1625169281250" duration="73000" />
       <workItem from="1625243199935" duration="3293000" />
-      <workItem from="1625429419930" duration="1627000" />
+      <workItem from="1625429419930" duration="1980000" />
     </task>
     <task id="LOCAL-00001" summary="Third commit, testing from the other side">
       <created>1625093773458</created>
@@ -108,7 +101,21 @@
       <option name="project" value="LOCAL" />
       <updated>1625093965268</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Testing DAO">
+      <created>1625431326327</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1625431326327</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Testing DAO">
+      <created>1625431487618</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1625431487618</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,6 +135,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Third commit, testing from the other side" />
-    <option name="LAST_COMMIT_MESSAGE" value="Third commit, testing from the other side" />
+    <MESSAGE value="Testing DAO" />
+    <option name="LAST_COMMIT_MESSAGE" value="Testing DAO" />
   </component>
 </project>
