@@ -12,6 +12,7 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
+import org.apache.spark.sql.SparkSession;
 import org.springframework.stereotype.Service;
 
 
@@ -21,12 +22,12 @@ public class EDAService {
     private Dataset<Row> dataset;
 
     public EDAService(String filePath) {
-//        Logger.getLogger("org").setLevel(Level.ERROR);
-//        SparkConf conf = new SparkConf().setAppName("wordCounts").setMaster("local[*]");   // using 3 CPU cores
-//        JavaSparkContext context = new JavaSparkContext(conf);
+        Logger.getLogger("org").setLevel(Level.ERROR);
+        // Creating spark session
+        SparkSession sparkSession = SparkSession.builder().appName("Wuzzuf").master("local[*]").getOrCreate();
 
 
-        this.dataset = JobsDAO.readCSVUsingSpark(filePath);
+        this.dataset = JobsDAO.readCSVUsingSpark(filePath,sparkSession);
     }
 
 
