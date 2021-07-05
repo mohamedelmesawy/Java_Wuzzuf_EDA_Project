@@ -13,22 +13,26 @@ import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
-//@Service
+@Service
 public class EDAService {
     // Business Layer
-    private Dataset<Row> dataset;
+//    @Autowired
+//    private SparkSession sparkSession;
 
-    public EDAService(String filePath) {
-        Logger.getLogger("org").setLevel(Level.ERROR);
-        // Creating spark session
-        SparkSession sparkSession = SparkSession.builder().appName("Wuzzuf").master("local[*]").getOrCreate();
+    private Dataset<Row> dataset = null;
+
+//    public EDAService(String filePath) {
+//        Logger.getLogger("org").setLevel(Level.ERROR);
+//        // Creating spark session
+//        SparkSession sparkSession = SparkSession.builder().appName("Wuzzuf").master("local[*]").getOrCreate();
 
 
-        this.dataset = JobsDAO.readCSVUsingSpark(filePath,sparkSession);
-    }
+//        this.dataset = JobsDAO.readCSVUsingSpark(filePath,sparkSession);
+//    }
 
 
     public void cleanData(){

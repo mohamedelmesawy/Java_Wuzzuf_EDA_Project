@@ -1,21 +1,27 @@
 package com.iti.wuzzufeda.controllers;
 
-import com.iti.wuzzufeda.models.Job;
-import com.iti.wuzzufeda.services.EDAService;
+import org.apache.spark.sql.SparkSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import com.iti.wuzzufeda.services.EDAService;
 
 @RestController
 @RequestMapping(value = "/api/v1")
 public class RESTController {
-//    @Autowired
-    private String filePath = "src/main/resources/Wuzzuf_Jobs.csv";
-    private EDAService edaService = new EDAService(filePath);
+//    private String filePath = "src/main/resources/Wuzzuf_Jobs.csv";
+    @Value("src/main/resources/Wuzzuf_Jobs.csv")
+    private String filepath;
+
+    @Autowired
+    private SparkSession sparkSession;
+
+    @Autowired
+    private EDAService edaService;
+//    private EDAService edaService = new EDAService(filePath);
 
     @GetMapping(value = {"", "/"})
     public String hello(){
@@ -34,6 +40,10 @@ public class RESTController {
         return edaService.getKMeansModel();
     }
 
+    @GetMapping(value = "/summary")
+    public String summary(){
+        return edaService.getSummary();
+    }
 
 
 
