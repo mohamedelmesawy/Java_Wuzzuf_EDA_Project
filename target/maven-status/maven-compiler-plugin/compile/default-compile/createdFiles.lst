@@ -2,11 +2,9 @@ com\iti\wuzzufeda\services\EDAService.class
 com\iti\wuzzufeda\WuzzufEDAApplication.class
 com\iti\wuzzufeda\dao\JobsDAO.class
 com\iti\wuzzufeda\models\JobType.class
-com\iti\wuzzufeda\controllers\WordCountController.class
 com\iti\wuzzufeda\models\Job.class
 com\iti\wuzzufeda\SparkConfig.class
 com\iti\wuzzufeda\services\Testing.class
 com\iti\wuzzufeda\models\JobLevel.class
 com\iti\wuzzufeda\controllers\RESTController.class
-com\iti\wuzzufeda\services\WordCountService.class
 com\iti\wuzzufeda\services\PreprocessingHelper.class
