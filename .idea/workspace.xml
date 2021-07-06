@@ -4,21 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86c2c673-6dba-4428-91b7-a50a3b0e3f64" name="Default Changelist" comment="Remove nulls method.">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/developers.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/controllers/RESTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/controllers/RESTController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/services/PreprocessingHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/services/PreprocessingHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/services/Testing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/services/Testing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/.ipynb_checkpoints/Untitled-checkpoint.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/controllers/RESTController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/controllers/RESTController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/models/Job.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/models/Job.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/services/Testing.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/services/Testing.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test.csv" beforeDir="false" />
+
     </list>
-    <ignored path="$PROJECT_DIR$/target/" />
-    <ignored path="$PROJECT_DIR$/out/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,36 +14,7 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/controllers/RESTController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="28" column="14" lean-forward="true" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#summary#0;class#RESTController#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/services/PreprocessingHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-              <folding>
-                <element signature="e#349#350#0" expanded="true" />
-                <element signature="e#376#377#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
+
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -225,30 +183,14 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../demo3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Mohamed\Desktop\Java_Wuzzuf_EDA_Project\Java_Wuzzuf_EDA_Project\src\main\resources\static\images" />
-      <recent name="C:\Users\Mohamed\Desktop\Java_Wuzzuf_EDA_Project\Java_Wuzzuf_EDA_Project\src\main\resources\static" />
-    </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
+
   <component name="RunManager" selected="Spring Boot.WuzzufEDAApplication">
     <configuration name="Testing" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.iti.wuzzufeda.services.Testing" />
@@ -276,13 +218,13 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="86c2c673-6dba-4428-91b7-a50a3b0e3f64" name="Default Changelist" comment="" />
+      <changelist id="f6239aea-628f-4d89-a290-ffcad2aa4c9f" name="Default Changelist" comment="Remove duplicates" />
       <created>1625091409059</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -293,7 +235,7 @@
       <workItem from="1625243199935" duration="3293000" />
       <workItem from="1625429419930" duration="1627000" />
       <workItem from="1625444617642" duration="3020000" />
-      <workItem from="1625505779769" duration="17232000" />
+
     </task>
     <task id="LOCAL-00001" summary="Third commit, testing from the other side">
       <created>1625093773458</created>
@@ -309,7 +251,21 @@
       <option name="project" value="LOCAL" />
       <updated>1625093965268</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Remove duplicates">
+      <created>1625598193937</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1625598193937</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Remove duplicates">
+      <created>1625598207027</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1625598207027</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -356,21 +312,14 @@
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -389,11 +338,11 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Third commit, testing from the other side" />
-    <MESSAGE value="Remove nulls method." />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove nulls method." />
+
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://$MAVEN_REPOSITORY$/org/scala-lang/scala-library/2.12.7/scala-library-2.12.7.jar!/scala/collection/Map.class">
