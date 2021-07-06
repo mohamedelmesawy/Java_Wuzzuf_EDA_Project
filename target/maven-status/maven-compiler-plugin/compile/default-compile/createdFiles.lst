@@ -1,8 +1,0 @@
-com\iti\wuzzufeda\services\EDAService.class
-com\iti\wuzzufeda\WuzzufEDAApplication.class
-com\iti\wuzzufeda\controllers\RESTController.class
-com\iti\wuzzufeda\dao\JobsDAO.class
-com\iti\wuzzufeda\models\JobType.class
-com\iti\wuzzufeda\models\Job.class
-com\iti\wuzzufeda\services\PreprocessingHelper.class
-com\iti\wuzzufeda\models\JobLevel.class
