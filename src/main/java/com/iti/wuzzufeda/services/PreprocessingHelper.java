@@ -1,7 +1,13 @@
 package com.iti.wuzzufeda.services;
 
+import org.apache.spark.ml.feature.OneHotEncoder;
+import org.apache.spark.ml.feature.StringIndexer;
+import org.apache.spark.sql.Column;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
+
+import java.util.List;
+
 public class PreprocessingHelper {
 
     public static Dataset<Row> removeNulls(Dataset<Row> dataset){
@@ -14,8 +20,26 @@ public class PreprocessingHelper {
         return dataset;
     }
 
-    public static Dataset<Row> encodeCategory(Dataset<Row> dataset, String columnName){
-        return null;
+    public static Dataset<Row> encodeCategoricalFeatures(Dataset<Row> dataset, List<String> features ){
+        Dataset<Row> newDataset = null;
+
+        for (var feature: features){
+            var indexer = new StringIndexer()
+                    .setInputCol(feature)
+                    .setOutputCol(feature + "_indexed")
+                    .fit(dataset);
+
+            newDataset = indexer.transform(dataset);
+
+            var encoder = new OneHotEncoder()
+                    .setInputCol(feature + "_indexed")
+                    .setOutputCol(feature + "_vec")
+                    .setDropLast(true);
+
+            newDataset = encoder.transform(newDataset);
+        }
+        return newDataset;
+
     }
 
 }
