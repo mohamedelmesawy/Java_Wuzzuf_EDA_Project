@@ -1,16 +1,12 @@
 package com.iti.wuzzufeda.services;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
 import com.iti.wuzzufeda.dao.JobsDAO;
 import com.iti.wuzzufeda.models.Job;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.spark.SparkConf;
-import org.apache.spark.api.java.JavaSparkContext;
+import org.apache.spark.sql.Column;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
@@ -32,7 +28,7 @@ public class EDAService {
 
     @Autowired
     public Dataset<Row> setDataset(){
-        this.dataset = JobsDAO.readCSVUsingSpark(filePath, sparkSession);
+        this.dataset = JobsDAO.readCSVUsingSpark(filePath, sparkSession,"%");
 
         return dataset;
     }
@@ -53,7 +49,7 @@ public class EDAService {
         // clean data of   < this.dataset >
         this.dataset = PreprocessingHelper.removeNulls(this.dataset);
         this.dataset = PreprocessingHelper.removeDuplicates(this.dataset);
-        this.dataset = PreprocessingHelper.encodeCategory(this.dataset, "_____");
+//        this.dataset = PreprocessingHelper.encodeCategory(this.dataset, "_____");
     }
 
 
@@ -94,5 +90,11 @@ public class EDAService {
         return "KMeans Model";
     }
 
+
+
+    // DELETE MEEEEEEEE TESTING
+    public Dataset<Row> testing(){
+        return PreprocessingHelper.encodeCategoricalFeatures(this.dataset,List.of("Type"));
+    }
 
 }

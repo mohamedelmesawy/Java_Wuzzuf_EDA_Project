@@ -2,6 +2,8 @@ package com.iti.wuzzufeda.services;
 
 import com.iti.wuzzufeda.dao.JobsDAO;
 import com.iti.wuzzufeda.models.Job;
+import org.apache.spark.sql.Dataset;
+import org.apache.spark.sql.Row;
 
 import java.io.IOException;
 import java.util.List;
@@ -9,6 +11,8 @@ import java.util.List;
 
 public class Testing {
     public static void main(String[] args) {
+
+
 
         String filePath = "src/main/resources/Wuzzuf_Jobs_delimiter.csv";
 
@@ -21,5 +25,16 @@ public class Testing {
             e.printStackTrace();
         }
 
+
+
+
+
+
+
+
+
+
     }
+
+
 }

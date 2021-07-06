@@ -70,7 +70,12 @@ public class RESTController {
 
     }
 
+    @GetMapping(value = "/test")
+    public String[] test() {
 
+        return edaService.testing().columns();
+
+    }
 
 
 

@@ -18,12 +18,14 @@ import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class JobsDAO {
 
-    public static Dataset<Row> readCSVUsingSpark(String filePath, SparkSession sparkSession){
+    public static Dataset<Row> readCSVUsingSpark(String filePath, SparkSession sparkSession, String delimiter){
         // Creating data-frame reader
         DataFrameReader dataFrameReader = sparkSession.read();
         dataFrameReader.option("header","true");
+        dataFrameReader.option("sep", delimiter);
 
         // Read data
         Dataset<Row> dataset = dataFrameReader.csv(filePath);
