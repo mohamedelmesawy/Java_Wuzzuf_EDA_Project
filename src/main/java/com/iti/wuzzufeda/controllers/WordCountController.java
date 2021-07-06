@@ -19,11 +19,11 @@ public class WordCountController {
     WordCountService service;
 
 
-    @GetMapping(value = "/{words}")
-    public Map<String, Long> count(@PathVariable String words) {
-        List<String> wordList = Arrays.asList(words.split("\\|"));
-        return service.getCount(wordList);
-    }
+//    @GetMapping(value = "/{words}")
+//    public Map<String, Long> count(@PathVariable String words) {
+//        List<String> wordList = Arrays.asList(words.split("\\|"));
+//        return service.getCount(wordList);
+//    }
 
     @GetMapping(value = "/summary")
     public String count() {

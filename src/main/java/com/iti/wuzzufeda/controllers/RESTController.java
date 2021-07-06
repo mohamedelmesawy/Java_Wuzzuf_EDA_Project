@@ -1,23 +1,23 @@
 package com.iti.wuzzufeda.controllers;
 
-import org.apache.spark.sql.SparkSession;
+import org.apache.spark.ml.source.libsvm.LibSVMDataSource;
+import org.apache.spark.sql.Dataset;
+import org.apache.spark.sql.Row;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.iti.wuzzufeda.services.EDAService;
 
+import java.util.List;
+
+@CrossOrigin
 @RestController
 @RequestMapping(value = "/api/v1")
 public class RESTController {
 //    private String filePath = "src/main/resources/Wuzzuf_Jobs.csv";
-    @Value("src/main/resources/Wuzzuf_Jobs.csv")
-    private String filepath;
-
-    @Autowired
-    private SparkSession sparkSession;
 
     @Autowired
     private EDAService edaService;
@@ -25,7 +25,6 @@ public class RESTController {
 
     @GetMapping(value = {"", "/"})
     public String hello(){
-
         return "Hello from other side , it's me!!!!!!!!!!!!!!!!!!!!!";
     }
 
@@ -41,8 +40,11 @@ public class RESTController {
     }
 
     @GetMapping(value = "/summary")
-    public String summary(){
-        return edaService.getSummary();
+    public String[] summary(){
+        Dataset<Row> result = edaService.test();
+
+        return result.columns();
+//        return edaService.getSummary();
     }
 
 

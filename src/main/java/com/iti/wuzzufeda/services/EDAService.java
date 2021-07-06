@@ -20,18 +20,31 @@ import org.springframework.stereotype.Service;
 @Service
 public class EDAService {
     // Business Layer
-//    @Autowired
-//    private SparkSession sparkSession;
+    @Autowired
+    private SparkSession sparkSession;
 
     private Dataset<Row> dataset = null;
 
-//    public EDAService(String filePath) {
+    public Dataset<Row> test(){
+        String filePath = "src/main/resources/Wuzzuf_Jobs.csv";
+        this.dataset = JobsDAO.readCSVUsingSpark(filePath, sparkSession);
+
+        return dataset;
+    }
+
+    public EDAService(){
+        String filePath = "src/main/resources/Wuzzuf_Jobs.csv";
+//        this.dataset = JobsDAO.readCSVUsingSpark(filePath, sparkSession);
+    }
+
+//    public EDAService() {
 //        Logger.getLogger("org").setLevel(Level.ERROR);
+//        String filePath = "src/main/resources/Wuzzuf_Jobs.csv";
+//
 //        // Creating spark session
 //        SparkSession sparkSession = SparkSession.builder().appName("Wuzzuf").master("local[*]").getOrCreate();
-
-
-//        this.dataset = JobsDAO.readCSVUsingSpark(filePath,sparkSession);
+//
+//        this.dataset = JobsDAO.readCSVUsingSpark(filePath, sparkSession);
 //    }
 
 
@@ -80,4 +93,7 @@ public class EDAService {
         return "KMeans Model";
     }
 
+    public Dataset<Row> getDataset() {
+        return dataset;
+    }
 }

@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 @Configuration
 @ConfigurationProperties(prefix = "spark-config")
@@ -29,6 +28,7 @@ public class SparkConfig {
                 .setAppName(appName)
                 .setSparkHome(sparkHome)
                 .setMaster(masterUri);
+//                .set("spark.driver.allowMultipleContexts", "true");
 
         return sparkConf;
     }
