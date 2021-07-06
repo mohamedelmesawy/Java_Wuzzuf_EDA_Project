@@ -1,8 +1,9 @@
 package com.iti.wuzzufeda.models;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Job {
+public class Job implements Serializable {
     private String title;
     private String company;
     private String location;
@@ -91,9 +92,23 @@ public class Job {
 
     @Override
     public String toString() {
-        return "Job{ " +
+        return "Job{" +
                 "title='" + title + '\'' +
                 ", company='" + company + '\'' +
-                " }";
+                ", location='" + location + '\'' +
+                ", type=" + type +
+                ", level=" + level +
+                ", yearsOfExperience='" + yearsOfExperience + '\'' +
+                ", country='" + country + '\'' +
+                ", skills= [ " + String.join(", ", skills)  + " ] " +
+                '}';
     }
+
+    //    @Override
+//    public String toString() {
+//        return "Job{ " +
+//                "title='" + title + '\'' +
+//                ", company='" + company + '\'' +
+//                " }";
+//    }
 }

@@ -1,5 +1,6 @@
 package com.iti.wuzzufeda.services;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -13,23 +14,40 @@ import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 
-//@Service
+@Service
 public class EDAService {
     // Business Layer
-    private Dataset<Row> dataset;
+    @Value("${filepath}")
+    private String filePath;
 
-    public EDAService(String filePath) {
-        Logger.getLogger("org").setLevel(Level.ERROR);
-        // Creating spark session
-        SparkSession sparkSession = SparkSession.builder().appName("Wuzzuf").master("local[*]").getOrCreate();
+    private Dataset<Row> dataset = null;
 
+    @Autowired
+    private SparkSession sparkSession;
 
-        this.dataset = JobsDAO.readCSVUsingSpark(filePath,sparkSession);
+    @Autowired
+    public Dataset<Row> setDataset(){
+        this.dataset = JobsDAO.readCSVUsingSpark(filePath, sparkSession);
+
+        return dataset;
     }
 
+    public Dataset<Row> getDataset() {
+        return dataset;
+    }
+
+    public List<Job> getAllJobs(){
+        try {
+            return JobsDAO.getListOfJobsFromCSV(filePath, "%");
+        } catch (IOException e) {
+            return null;
+        }
+    }
 
     public void cleanData(){
         // clean data of   < this.dataset >
@@ -75,5 +93,6 @@ public class EDAService {
     public String getKMeansModel(){
         return "KMeans Model";
     }
+
 
 }
