@@ -21,7 +21,5 @@ public class Testing {
             e.printStackTrace();
         }
 
-//            jobs.forEach(System.out::println);
-
     }
 }

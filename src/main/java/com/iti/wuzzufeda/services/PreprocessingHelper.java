@@ -5,7 +5,8 @@ import org.apache.spark.sql.Row;
 public class PreprocessingHelper {
 
     public static Dataset<Row> removeNulls(Dataset<Row> dataset){
-        return null;
+        dataset = dataset.na().drop();
+        return dataset;
     }
 
     public static Dataset<Row> removeDuplicates(Dataset<Row> dataset){
