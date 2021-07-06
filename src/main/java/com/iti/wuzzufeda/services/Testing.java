@@ -1,44 +1,27 @@
 package com.iti.wuzzufeda.services;
 
 import com.iti.wuzzufeda.dao.JobsDAO;
-import org.apache.log4j.Level;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
-import org.apache.spark.SparkConf;
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Row;
-import org.apache.spark.sql.SparkSession;
+import com.iti.wuzzufeda.models.Job;
 
-import java.util.Collections;
+import java.io.IOException;
 import java.util.List;
+
 
 public class Testing {
     public static void main(String[] args) {
-//        Logger.getLogger("org").setLevel(Level.ERROR);
-//        Logger.getRootLogger().setLevel(Level.OFF);
 
-        Logger.getRootLogger().setLevel(Level.ERROR);
-        String filePath = "src/main/resources/Wuzzuf_Jobs.csv";
+        String filePath = "src/main/resources/Wuzzuf_Jobs_delimiter.csv";
 
-        // Creating spark session
-//        SparkConf conf = new SparkConf().setAppName("Wuzzuf").setMaster("local[*]");
-        // cache sizes
+        try {
+            List<Job> jobs = JobsDAO.getListOfJobsFromCSV(filePath, "%");
+            jobs.forEach(System.out::println);
 
-//        SparkSession sparkSession = SparkSession.builder().appName("Wuzzuf").master("local[*]").getOrCreate();
-//
-//        Dataset<Row> dataset = JobsDAO.readCSVUsingSpark(filePath, sparkSession);
-//
-//        dataset.printSchema();
-//
-//        dataset = dataset.select("Title");
-//        dataset.show(10);
+            System.out.println(jobs.size());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-
-
-
-
+//            jobs.forEach(System.out::println);
 
     }
-
-
 }

@@ -1,5 +1,6 @@
 package com.iti.wuzzufeda.services;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -14,39 +15,39 @@ import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 
 @Service
 public class EDAService {
     // Business Layer
-    @Autowired
-    private SparkSession sparkSession;
+    @Value("${filepath}")
+    private String filePath;
 
     private Dataset<Row> dataset = null;
 
-    public Dataset<Row> test(){
-        String filePath = "src/main/resources/Wuzzuf_Jobs.csv";
+    @Autowired
+    private SparkSession sparkSession;
+
+    @Autowired
+    public Dataset<Row> setDataset(){
         this.dataset = JobsDAO.readCSVUsingSpark(filePath, sparkSession);
 
         return dataset;
     }
 
-    public EDAService(){
-        String filePath = "src/main/resources/Wuzzuf_Jobs.csv";
-//        this.dataset = JobsDAO.readCSVUsingSpark(filePath, sparkSession);
+    public Dataset<Row> getDataset() {
+        return dataset;
     }
 
-//    public EDAService() {
-//        Logger.getLogger("org").setLevel(Level.ERROR);
-//        String filePath = "src/main/resources/Wuzzuf_Jobs.csv";
-//
-//        // Creating spark session
-//        SparkSession sparkSession = SparkSession.builder().appName("Wuzzuf").master("local[*]").getOrCreate();
-//
-//        this.dataset = JobsDAO.readCSVUsingSpark(filePath, sparkSession);
-//    }
-
+    public List<Job> getAllJobs(){
+        try {
+            return JobsDAO.getListOfJobsFromCSV(filePath, "%");
+        } catch (IOException e) {
+            return null;
+        }
+    }
 
     public void cleanData(){
         // clean data of   < this.dataset >
@@ -93,7 +94,5 @@ public class EDAService {
         return "KMeans Model";
     }
 
-    public Dataset<Row> getDataset() {
-        return dataset;
-    }
+
 }

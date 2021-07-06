@@ -1,6 +1,6 @@
 package com.iti.wuzzufeda.controllers;
 
-import org.apache.spark.ml.source.libsvm.LibSVMDataSource;
+import com.iti.wuzzufeda.models.Job;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,21 +13,18 @@ import com.iti.wuzzufeda.services.EDAService;
 
 import java.util.List;
 
+
 @CrossOrigin
 @RestController
 @RequestMapping(value = "/api/v1")
 public class RESTController {
-//    private String filePath = "src/main/resources/Wuzzuf_Jobs.csv";
-
     @Autowired
     private EDAService edaService;
-//    private EDAService edaService = new EDAService(filePath);
 
     @GetMapping(value = {"", "/"})
     public String hello(){
         return "Hello from other side , it's me!!!!!!!!!!!!!!!!!!!!!";
     }
-
 
     @GetMapping(value = "/regression")
     public String regression(){
@@ -41,14 +38,21 @@ public class RESTController {
 
     @GetMapping(value = "/summary")
     public String[] summary(){
-        Dataset<Row> result = edaService.test();
+        Dataset<Row> result = edaService.getDataset();
 
         return result.columns();
-//        return edaService.getSummary();
+    }
+
+    @GetMapping(value = "/alljobs")
+    public List<Job> alljobs(){
+        return edaService.getAllJobs().subList(0, 100);
     }
 
 
 
+
+
+    
 
 
 
@@ -57,12 +61,12 @@ public class RESTController {
 //    public String greetingWithName(@PathVariable String name){
 //        return "Hello, welcome to EDA " + name;
 //    }
-//
+
 //    @GetMapping(value = "/jobs")
 //    public List<Job> jobs(){
 //        return null;
 //    }
-//
+
 //    @GetMapping(value = "/jobs/{count}")
 //    public List<Job> jobsMost(@PathVariable int count){
 //        return null;
