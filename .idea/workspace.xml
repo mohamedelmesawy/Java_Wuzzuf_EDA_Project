@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6239aea-628f-4d89-a290-ffcad2aa4c9f" name="Default Changelist" comment="Testing DAO">
+    <list default="true" id="f6239aea-628f-4d89-a290-ffcad2aa4c9f" name="Default Changelist" comment="Remove duplicates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/services/PreprocessingHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/services/PreprocessingHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/.ipynb_checkpoints/Untitled-checkpoint.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/wuzzuf-eda-api.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/models/Job.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/models/Job.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hadoop/bin/hadoop.lib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hadoop/bin/libwinutils.lib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +190,8 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../demo3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -217,19 +211,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="WuzzufEDAApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="wuzzuf-eda-api" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.iti.wuzzufeda.WuzzufEDAApplication" />
@@ -243,13 +224,13 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="86c2c673-6dba-4428-91b7-a50a3b0e3f64" name="Default Changelist" comment="" />
+      <changelist id="f6239aea-628f-4d89-a290-ffcad2aa4c9f" name="Default Changelist" comment="Remove duplicates" />
       <created>1625091409059</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -261,6 +242,7 @@
       <workItem from="1625429419930" duration="1627000" />
       <workItem from="1625444617642" duration="3020000" />
       <workItem from="1625505779769" duration="2163000" />
+      <workItem from="1625598395935" duration="538000" />
     </task>
     <task id="LOCAL-00001" summary="Third commit, testing from the other side">
       <created>1625093773458</created>
@@ -276,7 +258,21 @@
       <option name="project" value="LOCAL" />
       <updated>1625093965268</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Remove duplicates">
+      <created>1625598193937</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1625598193937</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Remove duplicates">
+      <created>1625598207027</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1625598207027</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -323,7 +319,7 @@
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -353,7 +349,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Third commit, testing from the other side" />
-    <option name="LAST_COMMIT_MESSAGE" value="Third commit, testing from the other side" />
+    <MESSAGE value="Remove duplicates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove duplicates" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
