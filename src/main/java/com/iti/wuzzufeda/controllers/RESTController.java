@@ -57,14 +57,12 @@ public class RESTController {
         return edaServiceStructure;
     }
 
-
     @GetMapping(value = "/mostDemandingCompanies")
     public Map<String, Long> mostDemandingCompanies(){
         Map<String, Long> result = this.edaService.getMostDemandingCompanies();
 
         return result;
     }
-
 
     @GetMapping(value = "/mostDemandingCompanies/{count}")
     public Map<String, Long> mostDemandingCompanies(@PathVariable int count){
@@ -83,12 +81,25 @@ public class RESTController {
         return  edaService.getMostPopularJobs(count);
     }
 
+    @GetMapping(value = "/mostPopularAreas")
+    public Map<String, Long> mostPopularAreas() {
+        return  edaService.getMostPopularAreas();
+    }
 
+    @GetMapping(path = "/mostPopularAreas/{count}")
+    public Map<String, Long> mostPopularAreas(@PathVariable int count) {
+        return  edaService.getMostPopularAreas(count);
+    }
 
+    @GetMapping(value = "/mostRequiredSkills")
+    public Map<String, Long> mostRequiredSkills() {
+        return  edaService.getMostRequiredSkills();
+    }
 
-
-
-
+    @GetMapping(path = "/mostRequiredSkills/{count}")
+    public Map<String, Long> mostRequiredSkills(@PathVariable int count) {
+        return  edaService.getMostRequiredSkills(count);
+    }
 
     @GetMapping(value = "/alljobs")
     public List<Job> alljobs(){
@@ -116,13 +127,11 @@ public class RESTController {
 
 
 
-
-//////////////////////////////////Remove Test/////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////  Remove Test   /////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////
     @GetMapping(value = "/test")
     public Map<String, Long> test() {
-
-//        return edaService.getDataset().as(Encoders.bean(Job.class)).;
-
         return edaService.getMostDemandingCompanies(10);
     }
 
@@ -142,40 +151,10 @@ public class RESTController {
 
     }
 
-
     @GetMapping(value = "/test3")
     public long test3() {
 
         return edaService.getDataset().count();
     }
-
-
-
-
-//    .getDataset().toJSON();
-//    .map(row -> row.mkString(), Encoders.STRING()).collectAsList();
-//   .map(row -> row.getString(0), Encoders.STRING()).collectAsList();
-//    .select(struct("*").as("col")).select(to_json(col("col")))
-
-
-
-
-
-    // PRIVATE Functions, Delete me!!!!!!!!!!!!!
-//    @GetMapping(value = "/{name}")
-//    public String greetingWithName(@PathVariable String name){
-//        return "Hello, welcome to EDA " + name;
-//    }
-
-//    @GetMapping(value = "/jobs")
-//    public List<Job> jobs(){
-//        return null;
-//    }
-
-//    @GetMapping(value = "/jobs/{count}")
-//    public List<Job> jobsMost(@PathVariable int count){
-//        return null;
-//    }
-
 
 }

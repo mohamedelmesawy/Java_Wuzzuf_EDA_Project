@@ -43,33 +43,6 @@ public class EDAService {
     }
 
 
-    public List<Map<String, String>> getListOfJobsFromDataSet(){
-
-        List<Map<String, String>> data =  dataset.toJSON()
-                .collectAsList()
-                .stream()
-                .map(value -> {
-                    value = value.substring(1, value.length()-1);           //remove curly brackets
-                    String[] keyValuePairs = value.split("\",\"");     //split the string to creat key-value pairs  ","
-                    Map<String, String> map = new HashMap<>();
-
-                    for(String pair : keyValuePairs)                         //iterate over the pairs
-                    {
-                        String[] entry = pair.split(":");              //split the pairs to get key and value
-                        map.put(entry[0].trim().replaceAll("^\"+|\"+$", ""),
-                                entry[1].trim().replaceAll("^\"+|\"+$", "")
-                        );                                                   //add them to the hashmap and trim whitespaces
-
-                    }
-
-                    return map;
-                }).collect(Collectors.toList());
-
-        return data;
-    }
-
-
-
     // ---------------------------------- SUMMARY ---------------------------------- //
     public Map<String, Object> getSummary() {
         Map<String, Object> map = new HashMap<>();
@@ -126,12 +99,59 @@ public class EDAService {
 
     }
 
-    public Map<String, Integer> getMostPopularAreas(int count) {
-        return null;
+    public Map<String, Long> getMostPopularAreas(int count) {
+        Map<Row, Long> result = this.dataset
+                .select("Location")
+                .javaRDD()
+                .countByValue();
+
+        return PreprocessingHelper.sortMap(result, count);
     }
 
-    public Map<String, Integer> getMostRequiredSkills(int count) {
-        return null;
+    public Map<String, Long> getMostPopularAreas() {
+        Map<Row, Long> result = this.dataset
+                .select("Location")
+                .javaRDD()
+                .countByValue();
+
+        return PreprocessingHelper.sortMap(result);
+    }
+
+    public Map<String, Long> getMostRequiredSkills(int count) {
+        Map<String, Long> data = dataset.select("Skills")
+                .javaRDD()
+                .map(row -> row.mkString().split(","))
+                .flatMap(array -> Arrays.stream(array).iterator())
+                .countByValue()
+                .entrySet()
+                .stream()
+                .sorted(Collections.reverseOrder(Comparator.comparing(Map.Entry::getValue)))
+                .map(entry -> new AbstractMap.SimpleEntry<String, Long>(entry.getKey(), entry.getValue()))
+                .limit(count)
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue,
+                        (oldValue, newValue) -> oldValue, LinkedHashMap::new)
+                );
+        return data;
+    }
+
+    public Map<String, Long> getMostRequiredSkills() {
+        Map<String, Long> data = dataset.select("Skills")
+                .javaRDD()
+                .map(row -> row.mkString().split(","))
+                .flatMap(array -> Arrays.stream(array).iterator())
+                .countByValue()
+                .entrySet()
+                .stream()
+                .sorted(Collections.reverseOrder(Comparator.comparing(Map.Entry::getValue)))
+                .map(entry -> new AbstractMap.SimpleEntry<String, Long>(entry.getKey(), entry.getValue()))
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue,
+                        (oldValue, newValue) -> oldValue, LinkedHashMap::new)
+                );
+        return data;
     }
 
 
@@ -145,10 +165,7 @@ public class EDAService {
     }
 
 
-
-
-
-    //////////////////// DELETE MEEEEEEEE TESTING /////////////////////////////
+    // ---------------------------- Retrieve Data from CSV File -------------------------- //
     public Dataset<Row> getDataset() {
         return dataset;
     }
@@ -159,6 +176,31 @@ public class EDAService {
         } catch (IOException e) {
             return null;
         }
+    }
+
+    public List<Map<String, String>> getListOfJobsFromDataSet(){
+
+        List<Map<String, String>> data =  dataset.toJSON()
+                .collectAsList()
+                .stream()
+                .map(value -> {
+                    value = value.substring(1, value.length()-1);           //remove curly brackets
+                    String[] keyValuePairs = value.split("\",\"");     //split the string to creat key-value pairs  ","
+                    Map<String, String> map = new HashMap<>();
+
+                    for(String pair : keyValuePairs)                         //iterate over the pairs
+                    {
+                        String[] entry = pair.split(":");              //split the pairs to get key and value
+                        map.put(entry[0].trim().replaceAll("^\"+|\"+$", ""),
+                                entry[1].trim().replaceAll("^\"+|\"+$", "")
+                        );                                                   //add them to the hashmap and trim whitespaces
+
+                    }
+
+                    return map;
+                }).collect(Collectors.toList());
+
+        return data;
     }
 
 }

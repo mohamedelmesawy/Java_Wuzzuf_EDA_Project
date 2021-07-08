@@ -44,7 +44,7 @@ public class PreprocessingHelper {
     }
 
     public static Map<String, Long> sortMap(Map<Row, Long> data){
-        Map<String, Long> sordedData = data.entrySet()
+        Map<String, Long> sortedData = data.entrySet()
                 .stream()
                 .sorted(Collections.reverseOrder(Comparator.comparing(Map.Entry::getValue)))
                 .map(entry -> new AbstractMap.SimpleEntry<String, Long>(entry.getKey().mkString(), entry.getValue()))
@@ -54,11 +54,11 @@ public class PreprocessingHelper {
                         (oldValue, newValue) -> oldValue, LinkedHashMap::new)
                 );
 
-        return sordedData;
+        return sortedData;
     }
 
     public static Map<String, Long> sortMap(Map<Row,Long> data, int count){
-        Map<String, Long> sordedData = data.entrySet()
+        Map<String, Long> sortedData = data.entrySet()
                 .stream()
                 .sorted(Collections.reverseOrder(Comparator.comparing(Map.Entry::getValue)))
                 .map(entry -> new AbstractMap.SimpleEntry<String, Long>(entry.getKey().mkString(), entry.getValue()))
@@ -69,7 +69,7 @@ public class PreprocessingHelper {
                         (oldValue, newValue) -> oldValue, LinkedHashMap::new)
                 );
 
-        return sordedData;
+        return sortedData;
     }
 
 
