@@ -104,11 +104,4 @@ public class Job implements Serializable {
                 '}';
     }
 
-    //    @Override
-//    public String toString() {
-//        return "Job{ " +
-//                "title='" + title + '\'' +
-//                ", company='" + company + '\'' +
-//                " }";
-//    }
 }

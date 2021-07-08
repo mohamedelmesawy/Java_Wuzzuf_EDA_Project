@@ -3,22 +3,21 @@ package com.iti.wuzzufeda.dao;
 import com.iti.wuzzufeda.models.Job;
 import com.iti.wuzzufeda.models.JobLevel;
 import com.iti.wuzzufeda.models.JobType;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
 import org.apache.spark.sql.DataFrameReader;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-
+@Component
 public class JobsDAO {
 
     public static Dataset<Row> readCSVUsingSpark(String filePath, SparkSession sparkSession, String delimiter){
@@ -56,7 +55,7 @@ public class JobsDAO {
                             encodeJobLevel(attributes[5]),
                             attributes[6],
                             attributes[7],
-                        List.of(attributes[8].split(","))
+                        Arrays.asList(attributes[8].split(","))
 
                 ));
             }catch (Exception ignored){ }
