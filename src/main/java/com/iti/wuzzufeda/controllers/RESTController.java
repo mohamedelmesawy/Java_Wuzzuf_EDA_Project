@@ -73,7 +73,15 @@ public class RESTController {
         return result;
     }
 
+    @GetMapping(value = "/mostPopularJobs")
+    public Map<String, Long> mostPopularJobs() {
+        return  edaService.getMostPopularJobs();
+    }
 
+    @GetMapping(path = "/mostPopularJobs/{count}")
+    public Map<String, Long> mostPopularJobs(@PathVariable int count) {
+        return  edaService.getMostPopularJobs(count);
+    }
 
 
 

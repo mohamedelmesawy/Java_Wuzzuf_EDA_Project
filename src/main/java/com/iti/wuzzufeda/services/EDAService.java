@@ -90,36 +90,40 @@ public class EDAService {
 
     // ------------------------ DATA ANALYSIS ---------------------------------- //
     public Map<String, Long> getMostDemandingCompanies(int count) {
-        Map<Row, Long> result = this.dataset.select("Company").javaRDD().countByValue();
+        Map<Row, Long> result = this.dataset
+                .select("Company")
+                .javaRDD()
+                .countByValue();
 
-        return result.entrySet()
-            .stream()
-            .sorted(Collections.reverseOrder(Comparator.comparing(Map.Entry::getValue)))
-            .limit(count)
-            .map(entry -> new AbstractMap.SimpleEntry<String, Long>(entry.getKey().mkString(), entry.getValue()))
-            .collect(Collectors.toMap(
-                    Map.Entry::getKey,
-                    Map.Entry::getValue,
-                    (oldValue, newValue) -> oldValue, LinkedHashMap::new)
-            );
+        return PreprocessingHelper.sortMap(result, count);
     }
 
     public Map<String, Long> getMostDemandingCompanies() {
-        Map<Row, Long> result = this.dataset.select("Company").javaRDD().countByValue();
+        Map<Row, Long> result = this.dataset
+                .select("Company")
+                .javaRDD()
+                .countByValue();
 
-        return result.entrySet()
-            .stream()
-            .sorted(Collections.reverseOrder(Comparator.comparing(Map.Entry::getValue)))
-            .map(entry -> new AbstractMap.SimpleEntry<String, Long>(entry.getKey().mkString(), entry.getValue()))
-            .collect(Collectors.toMap(
-                    Map.Entry::getKey,
-                    Map.Entry::getValue,
-                    (oldValue, newValue) -> oldValue, LinkedHashMap::new)
-            );
+        return PreprocessingHelper.sortMap(result);
     }
 
-    public Map<String, Integer> getMostPopularJobs(int count) {
-        return null;
+    public Map<String, Long> getMostPopularJobs(int count) {
+        Map<Row, Long> jobsCount = dataset
+                .select("Title")
+                .javaRDD()
+                .countByValue();
+
+        return PreprocessingHelper.sortMap(jobsCount, count);
+    }
+
+    public Map<String, Long> getMostPopularJobs() {
+        Map<Row, Long> jobsCount = dataset
+                .select("Title")
+                .javaRDD()
+                .countByValue();
+
+        return PreprocessingHelper.sortMap(jobsCount);
+
     }
 
     public Map<String, Integer> getMostPopularAreas(int count) {

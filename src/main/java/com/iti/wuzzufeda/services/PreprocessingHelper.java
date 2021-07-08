@@ -6,7 +6,8 @@ import org.apache.spark.ml.feature.StringIndexerModel;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class PreprocessingHelper {
 
@@ -41,5 +42,35 @@ public class PreprocessingHelper {
         return newDataset;
 
     }
+
+    public static Map<String, Long> sortMap(Map<Row, Long> data){
+        Map<String, Long> sordedData = data.entrySet()
+                .stream()
+                .sorted(Collections.reverseOrder(Comparator.comparing(Map.Entry::getValue)))
+                .map(entry -> new AbstractMap.SimpleEntry<String, Long>(entry.getKey().mkString(), entry.getValue()))
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue,
+                        (oldValue, newValue) -> oldValue, LinkedHashMap::new)
+                );
+
+        return sordedData;
+    }
+
+    public static Map<String, Long> sortMap(Map<Row,Long> data, int count){
+        Map<String, Long> sordedData = data.entrySet()
+                .stream()
+                .sorted(Collections.reverseOrder(Comparator.comparing(Map.Entry::getValue)))
+                .map(entry -> new AbstractMap.SimpleEntry<String, Long>(entry.getKey().mkString(), entry.getValue()))
+                .limit(count)
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue,
+                        (oldValue, newValue) -> oldValue, LinkedHashMap::new)
+                );
+
+        return sordedData;
+    }
+
 
 }
