@@ -93,29 +93,29 @@ public class EDAService {
         Map<Row, Long> result = this.dataset.select("Company").javaRDD().countByValue();
 
         return result.entrySet()
-                .stream()
-                .sorted(Collections.reverseOrder(Comparator.comparing(Map.Entry::getValue)))
-                .limit(count)
-                .map(entry -> new AbstractMap.SimpleEntry<String, Long>(entry.getKey().mkString(), entry.getValue()))
-                .collect(Collectors.toMap(
-                        Map.Entry::getKey,
-                        Map.Entry::getValue,
-                        (oldValue, newValue) -> oldValue, LinkedHashMap::new)
-                );
+            .stream()
+            .sorted(Collections.reverseOrder(Comparator.comparing(Map.Entry::getValue)))
+            .limit(count)
+            .map(entry -> new AbstractMap.SimpleEntry<String, Long>(entry.getKey().mkString(), entry.getValue()))
+            .collect(Collectors.toMap(
+                    Map.Entry::getKey,
+                    Map.Entry::getValue,
+                    (oldValue, newValue) -> oldValue, LinkedHashMap::new)
+            );
     }
 
     public Map<String, Long> getMostDemandingCompanies() {
         Map<Row, Long> result = this.dataset.select("Company").javaRDD().countByValue();
 
         return result.entrySet()
-                .stream()
-                .sorted(Collections.reverseOrder(Comparator.comparing(Map.Entry::getValue)))
-                .map(entry -> new AbstractMap.SimpleEntry<String, Long>(entry.getKey().mkString(), entry.getValue()))
-                .collect(Collectors.toMap(
-                        Map.Entry::getKey,
-                        Map.Entry::getValue,
-                        (oldValue, newValue) -> oldValue, LinkedHashMap::new)
-                );
+            .stream()
+            .sorted(Collections.reverseOrder(Comparator.comparing(Map.Entry::getValue)))
+            .map(entry -> new AbstractMap.SimpleEntry<String, Long>(entry.getKey().mkString(), entry.getValue()))
+            .collect(Collectors.toMap(
+                    Map.Entry::getKey,
+                    Map.Entry::getValue,
+                    (oldValue, newValue) -> oldValue, LinkedHashMap::new)
+            );
     }
 
     public Map<String, Integer> getMostPopularJobs(int count) {
