@@ -9,10 +9,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.iti.wuzzufeda.services.EDAService;
 import scala.Tuple2;
@@ -20,10 +17,8 @@ import scala.Tuple2;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 
 @CrossOrigin
@@ -50,11 +45,42 @@ public class RESTController {
     }
 
     @GetMapping(value = "/summary")
-    public String[] summary(){
-        Dataset<Row> result = edaService.getDataset();
+    public Map<String, Object> summary(){
 
-        return result.columns();
+        return edaService.getSummary();
     }
+
+    @GetMapping(value = "/structure")
+    public Tuple2<String, String>[] structure(){
+        Tuple2<String, String>[] edaServiceStructure = edaService.getStructure();
+
+        return edaServiceStructure;
+    }
+
+
+    @GetMapping(value = "/mostDemandingCompanies")
+    public Map<String, Long> mostDemandingCompanies(){
+        Map<String, Long> result = this.edaService.getMostDemandingCompanies();
+
+        return result;
+    }
+
+
+    @GetMapping(value = "/mostDemandingCompanies/{count}")
+    public Map<String, Long> mostDemandingCompanies(@PathVariable int count){
+        Map<String, Long> result = this.edaService.getMostDemandingCompanies(count);
+
+        return result;
+    }
+
+
+
+
+
+
+
+
+
 
     @GetMapping(value = "/alljobs")
     public List<Job> alljobs(){
@@ -85,11 +111,11 @@ public class RESTController {
 
 //////////////////////////////////Remove Test/////////////////////////////////////////
     @GetMapping(value = "/test")
-    public Tuple2<String, String>[] test() {
+    public Map<String, Long> test() {
 
-//        return (edaService.getDataset().columns());
-        return edaService.getDataset().dtypes();
+//        return edaService.getDataset().as(Encoders.bean(Job.class)).;
 
+        return edaService.getMostDemandingCompanies(10);
     }
 
     @GetMapping(value = "/test1")
@@ -110,9 +136,9 @@ public class RESTController {
 
 
     @GetMapping(value = "/test3")
-    public String[] test3() {
+    public long test3() {
 
-        return edaService.testing();
+        return edaService.getDataset().count();
     }
 
 
