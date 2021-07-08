@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.iti.wuzzufeda.services.EDAService;
+import scala.Tuple2;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -28,6 +29,7 @@ import java.util.List;
 public class RESTController {
     @Autowired
     private EDAService edaService;
+
 
     @GetMapping(value = {"", "/"})
     public String hello(){
@@ -70,13 +72,46 @@ public class RESTController {
 
     }
 
-    @GetMapping(value = "/test")
-    public String[] test() {
 
-        return edaService.testing().columns();
+
+
+//////////////////////////////////Remove Test/////////////////////////////////////////
+    @GetMapping(value = "/test")
+    public Tuple2<String, String>[] test() {
+
+//        return (edaService.getDataset().columns());
+        return edaService.getDataset().dtypes();
 
     }
 
+    @GetMapping(value = "/test1")
+    public List<String> test1() {
+        Dataset<String> d = edaService.getDataset().toJSON();
+
+        return  d.collectAsList();
+
+    }
+
+    @GetMapping(value = "/test2")
+    public Object test2() {
+        Object d = edaService.getDataset().toJSON().head(1);
+
+        return  d;
+
+    }
+
+
+//    .getDataset().toJSON();
+//    .map(row -> row.mkString(), Encoders.STRING()).collectAsList();
+//   .map(row -> row.getString(0), Encoders.STRING()).collectAsList();
+//    .select(struct("*").as("col")).select(to_json(col("col")))
+
+
+    @GetMapping(value = "/test3")
+    public String[] test3() {
+
+        return edaService.testing();
+    }
 
 
 

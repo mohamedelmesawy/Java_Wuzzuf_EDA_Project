@@ -2,7 +2,7 @@ package com.iti.wuzzufeda.services;
 
 import org.apache.spark.ml.feature.OneHotEncoder;
 import org.apache.spark.ml.feature.StringIndexer;
-import org.apache.spark.sql.Column;
+import org.apache.spark.ml.feature.StringIndexerModel;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 
@@ -23,15 +23,15 @@ public class PreprocessingHelper {
     public static Dataset<Row> encodeCategoricalFeatures(Dataset<Row> dataset, List<String> features ){
         Dataset<Row> newDataset = null;
 
-        for (var feature: features){
-            var indexer = new StringIndexer()
+        for (String feature: features){
+            StringIndexerModel indexer = new StringIndexer()
                     .setInputCol(feature)
                     .setOutputCol(feature + "_indexed")
                     .fit(dataset);
 
             newDataset = indexer.transform(dataset);
 
-            var encoder = new OneHotEncoder()
+            OneHotEncoder encoder = new OneHotEncoder()
                     .setInputCol(feature + "_indexed")
                     .setOutputCol(feature + "_vec")
                     .setDropLast(true);
