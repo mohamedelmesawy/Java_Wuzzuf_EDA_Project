@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6239aea-628f-4d89-a290-ffcad2aa4c9f" name="Default Changelist" comment="solving some errors">
+    <list default="true" id="f6239aea-628f-4d89-a290-ffcad2aa4c9f" name="Default Changelist" comment="allJobsSpark">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/controllers/RESTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/controllers/RESTController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/services/EDAService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/services/EDAService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/services/PreprocessingHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/services/PreprocessingHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/controllers/RESTController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/controllers/RESTController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -204,12 +205,17 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ITI-AI-PRO\Java\training\Java_Wuzzuf_EDA_Project\src\main\resources" />
+    </key>
   </component>
   <component name="RunManager" selected="Spring Boot.WuzzufEDAApplication">
     <configuration name="Testing" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -272,7 +278,7 @@
       <workItem from="1625598395935" duration="2245000" />
       <workItem from="1625605771897" duration="2554000" />
       <workItem from="1625674446444" duration="13934000" />
-      <workItem from="1625731543429" duration="29553000" />
+      <workItem from="1625731543429" duration="38896000" />
     </task>
     <task id="LOCAL-00001" summary="Third commit, testing from the other side">
       <created>1625093773458</created>
@@ -309,7 +315,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625760807493</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="allJobsSpark">
+      <created>1625766841455</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1625766841455</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -388,7 +401,8 @@
     <MESSAGE value="Third commit, testing from the other side" />
     <MESSAGE value="Remove duplicates" />
     <MESSAGE value="solving some errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="solving some errors" />
+    <MESSAGE value="allJobsSpark" />
+    <option name="LAST_COMMIT_MESSAGE" value="allJobsSpark" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -9,10 +9,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.iti.wuzzufeda.services.EDAService;
 import scala.Tuple2;
@@ -20,10 +17,8 @@ import scala.Tuple2;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 
 @CrossOrigin
@@ -92,27 +87,24 @@ public class RESTController {
 
     }
 
-    @GetMapping(value = "/test1")
-    public List<String> test1() {
-        Dataset<String> d = edaService.getDataset().toJSON();
 
-        return  d.collectAsList();
 
+        @GetMapping(value = "/mostPopularJobs")
+    public Map<String, Long> mostPopularJobs() {
+        return  edaService.getMostPopularJobs();
     }
 
-    @GetMapping(value = "/test2")
-    public Object test2() {
-        Object d = edaService.getDataset().toJSON().head(1);
-
-        return  d;
-
+    @GetMapping(path = "/mostPopularJobs/{id}")
+    public Map<String, Long> mostPopularJobs(@PathVariable int id) {
+        return  edaService.getMostPopularJobs(id);
     }
+
 
 
     @GetMapping(value = "/test3")
-    public String[] test3() {
+    public Dataset<Row> test3() {
 
-        return edaService.testing();
+        return edaService.getDataset().summary();
     }
 
 

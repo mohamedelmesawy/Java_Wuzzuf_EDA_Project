@@ -1,21 +1,15 @@
 package com.iti.wuzzufeda.services;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import com.iti.wuzzufeda.SparkConfiguration;
-import com.iti.wuzzufeda.WuzzufEDAApplication;
 import com.iti.wuzzufeda.dao.JobsDAO;
 import com.iti.wuzzufeda.models.Job;
 
 
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Row;
-import org.apache.spark.sql.SparkSession;
+import org.apache.spark.sql.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -97,8 +91,24 @@ public class EDAService {
         return null;
     }
 
-    public Map<String, Integer> getMostPopularJobs(int count) {
-        return null;
+
+    public Map<String, Long> getMostPopularJobs(int count) {
+        Map<Row, Long> jobsCount = dataset
+                .select("Title")
+                .javaRDD()
+                .countByValue();
+
+        return PreprocessingHelper.sortMap(jobsCount,count);
+    }
+
+    public Map<String, Long> getMostPopularJobs() {
+        Map<Row, Long> jobsCount = dataset
+                .select("Title")
+                .javaRDD()
+                .countByValue();
+
+        return PreprocessingHelper.sortMap(jobsCount);
+
     }
 
     public Map<String, Integer> getMostPopularAreas(int count) {
@@ -121,33 +131,4 @@ public class EDAService {
 
 
 
-
-
-    //////////////////// DELETE MEEEEEEEE TESTING /////////////////////////////
-    public String[] testing() {
-        List l1 = new ArrayList(); l1.add("Type");
-        return PreprocessingHelper.encodeCategoricalFeatures(this.dataset, l1).columns();
-    }
-
-//    public String testing2() {
-//
-//        var col = dataset.select("Type").
-//                collectAsList().stream().map(e -> e.toString()).collect(Collectors.toList());
-//
-//        var colJson = new Gson().toJson(col);
-//
-//        return colJson;
-//
-//    }
-
-//    public String[] testing2() {
-//
-//         List<String> col = dataset.select("Type").
-//                collectAsList().stream().map(e -> e.toString()).collect(Collectors.toList());
-//
-//        String[] colArray = col.toArray(new String[0]);
-//
-//        return colArray;
-//
-//    }
 }
