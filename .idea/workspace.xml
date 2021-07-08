@@ -4,32 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6239aea-628f-4d89-a290-ffcad2aa4c9f" name="Default Changelist" comment="Remove duplicates">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/SparkConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="f6239aea-628f-4d89-a290-ffcad2aa4c9f" name="Default Changelist" comment="solving some errors">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/SparkConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/WuzzufEDAApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/WuzzufEDAApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/controllers/RESTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/controllers/RESTController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/dao/JobsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/dao/JobsDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/models/Job.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/models/Job.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/services/EDAService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/services/EDAService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/services/PreprocessingHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/services/PreprocessingHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/services/Testing.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/SparkConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/WuzzufEDAApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/WuzzufEDAApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/controllers/RESTController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/controllers/RESTController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/dao/JobsDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/dao/JobsDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/models/Job.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/models/Job.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/models/JobLevel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/models/JobLevel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/models/JobType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/models/JobType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/services/EDAService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/services/EDAService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/services/PreprocessingHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/services/PreprocessingHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/services/Testing.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -293,7 +272,7 @@
       <workItem from="1625598395935" duration="2245000" />
       <workItem from="1625605771897" duration="2554000" />
       <workItem from="1625674446444" duration="13934000" />
-      <workItem from="1625731543429" duration="25970000" />
+      <workItem from="1625731543429" duration="29553000" />
     </task>
     <task id="LOCAL-00001" summary="Third commit, testing from the other side">
       <created>1625093773458</created>
@@ -323,7 +302,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625598207027</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="solving some errors">
+      <created>1625760807493</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1625760807493</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -401,7 +387,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Third commit, testing from the other side" />
     <MESSAGE value="Remove duplicates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove duplicates" />
+    <MESSAGE value="solving some errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="solving some errors" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

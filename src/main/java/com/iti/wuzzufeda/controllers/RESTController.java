@@ -20,7 +20,10 @@ import scala.Tuple2;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 
 @CrossOrigin
@@ -56,6 +59,11 @@ public class RESTController {
     @GetMapping(value = "/alljobs")
     public List<Job> alljobs(){
         return edaService.getAllJobs().subList(0, 100);
+    }
+
+    @GetMapping(value = "/allJobsSpark")
+    public List<Map<String, String>> allJobsSpark() {
+        return edaService.getListOfJobsFromDataSet();
     }
 
     @GetMapping(value = "/image", produces = MediaType.IMAGE_JPEG_VALUE)
@@ -101,17 +109,19 @@ public class RESTController {
     }
 
 
-//    .getDataset().toJSON();
-//    .map(row -> row.mkString(), Encoders.STRING()).collectAsList();
-//   .map(row -> row.getString(0), Encoders.STRING()).collectAsList();
-//    .select(struct("*").as("col")).select(to_json(col("col")))
-
-
     @GetMapping(value = "/test3")
     public String[] test3() {
 
         return edaService.testing();
     }
+
+
+
+
+//    .getDataset().toJSON();
+//    .map(row -> row.mkString(), Encoders.STRING()).collectAsList();
+//   .map(row -> row.getString(0), Encoders.STRING()).collectAsList();
+//    .select(struct("*").as("col")).select(to_json(col("col")))
 
 
 
