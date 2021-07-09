@@ -1,7 +1,9 @@
 package com.iti.wuzzufeda.services;
 
+import java.awt.*;
 import java.io.IOException;
 import java.util.*;
+import java.util.List;
 import java.util.stream.Collectors;
 
 import com.iti.wuzzufeda.SparkConfiguration;
@@ -10,6 +12,8 @@ import com.iti.wuzzufeda.models.Job;
 
 
 import org.apache.spark.sql.*;
+import org.knowm.xchart.PieChart;
+import org.knowm.xchart.PieChartBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -153,6 +157,7 @@ public class EDAService {
                 );
         return data;
     }
+
 
 
     // ---------------------------- MACHINE LEARNING MODELS -------------------------- //

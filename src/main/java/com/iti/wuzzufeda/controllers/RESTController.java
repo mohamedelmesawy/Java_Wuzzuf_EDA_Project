@@ -1,6 +1,7 @@
 package com.iti.wuzzufeda.controllers;
 
 import com.iti.wuzzufeda.models.Job;
+import com.iti.wuzzufeda.services.ChartService;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -111,19 +112,69 @@ public class RESTController {
         return edaService.getListOfJobsFromDataSet();
     }
 
-    @GetMapping(value = "/image", produces = MediaType.IMAGE_JPEG_VALUE)
-    public ResponseEntity<Resource> image() throws IOException {
+
+
+
+
+    @GetMapping(value = "/image/companiespiechart", produces = MediaType.IMAGE_JPEG_VALUE)
+    public ResponseEntity<Resource> companiespiechart() throws IOException {
+
+        String filename = "src/main/resources/static/companies.png";
+
+        ChartService.getJobsPieChart(edaService.getMostDemandingCompanies(5),
+                "Highest 5 Demanding Companies",200,400,filename);
+
         final ByteArrayResource inputStream =
                 new ByteArrayResource(
                         Files.readAllBytes(
-                                Paths.get("src/main/resources/static/developers.jpeg")));
+                                Paths.get(filename)));
 
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .contentLength(inputStream.contentLength())
                 .body(inputStream);
-
     }
+
+    @GetMapping(value = "/image/jobsbarchart", produces = MediaType.IMAGE_JPEG_VALUE)
+    public ResponseEntity<Resource> jobsbarchart() throws IOException {
+
+        String filename = "src/main/resources/static/jobs.png";
+
+        ChartService.getBarChart(edaService.getMostPopularJobs(10),
+                "Most Popular 10 Jobs","Job Title","Frequency",
+                10,600,800,filename);
+
+        final ByteArrayResource inputStream =
+                new ByteArrayResource(
+                        Files.readAllBytes(
+                                Paths.get(filename)));
+
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .contentLength(inputStream.contentLength())
+                .body(inputStream);
+    }
+
+    @GetMapping(value = "/image/areasbarchart", produces = MediaType.IMAGE_JPEG_VALUE)
+    public ResponseEntity<Resource> areasbarchart() throws IOException {
+
+        String filename = "src/main/resources/static/areasbarchart.png";
+
+        ChartService.getBarChart(edaService.getMostPopularAreas(10),
+                "Most Popular Areas","Area","Frequency",
+                10,600,800,filename);
+
+        final ByteArrayResource inputStream =
+                new ByteArrayResource(
+                        Files.readAllBytes(
+                                Paths.get(filename)));
+
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .contentLength(inputStream.contentLength())
+                .body(inputStream);
+    }
+
 
 
 

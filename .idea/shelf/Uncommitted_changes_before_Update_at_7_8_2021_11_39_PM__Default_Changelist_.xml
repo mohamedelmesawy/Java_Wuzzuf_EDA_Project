@@ -1,0 +1,14 @@
+<changelist name="Uncommitted_changes_before_Update_at_7_8_2021_11_39_PM_[Default_Changelist]" date="1625780385689" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_8_2021_11_39_PM_[Default_Changelist]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 7/8/2021 11:39 PM [Default Changelist]" />
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/iti/wuzzufeda/services/EDAService.class" />
+    <option name="AFTER_PATH" value="target/classes/com/iti/wuzzufeda/services/EDAService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_8_2021_11_39_PM_[Default_Changelist]/EDAService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/iti/wuzzufeda/services/PreprocessingHelper.class" />
+    <option name="AFTER_PATH" value="target/classes/com/iti/wuzzufeda/services/PreprocessingHelper.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_8_2021_11_39_PM_[Default_Changelist]/PreprocessingHelper.class" />
+  </binary>
+</changelist>
