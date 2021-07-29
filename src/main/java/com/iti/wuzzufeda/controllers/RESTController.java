@@ -18,6 +18,7 @@ import scala.Tuple2;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -29,20 +30,9 @@ public class RESTController {
     @Autowired
     private EDAService edaService;
 
-
     @GetMapping(value = {"", "/"})
     public String hello(){
-        return "Hello from other side , it's me!!!!!!!!!!!!!!!!!!!!!";
-    }
-
-    @GetMapping(value = "/regression")
-    public String regression(){
-        return edaService.getRegressionModel();
-    }
-
-    @GetMapping(value = "/kmeans")
-    public String kmeans(){
-        return edaService.getKMeansModel();
+        return "Hello from the other side , it's me!!!!!!!!!!!!!!!!!!!!!";
     }
 
     @GetMapping(value = "/summary")
@@ -108,13 +98,16 @@ public class RESTController {
     }
 
     @GetMapping(value = "/allJobsSpark")
-    public List<Map<String, String>> allJobsSpark() {
+    public List<Map<String, Object>> allJobsSpark() throws IOException {
         return edaService.getListOfJobsFromDataSet();
     }
 
+    @GetMapping(value = "/yearsofexp")
+    public List<Map<String, Object>> getFactorizedYearsColumn() throws IOException {
+        List<Map<String, Object>> jobsFromDataSet = edaService.getListOfJobsFromDataSet();
 
-
-
+        return edaService.factorizeYearsColumn(jobsFromDataSet);
+    }
 
     @GetMapping(value = "/image/companiespiechart", produces = MediaType.IMAGE_JPEG_VALUE)
     public ResponseEntity<Resource> companiespiechart() throws IOException {
@@ -175,37 +168,22 @@ public class RESTController {
                 .body(inputStream);
     }
 
+    @GetMapping(value = "/image/kmeans/{k}", produces = MediaType.IMAGE_JPEG_VALUE)
+    public ResponseEntity<ByteArrayResource> kmeans(@PathVariable int k) throws IOException {
+        String filename = "src/main/resources/static/kmeans.png";
+        Dataset<Row> prediction = edaService.getKMeansModel(edaService.getDataset(), Arrays.asList("Title", "Company"), k);
 
+        ChartService.graphScatterPlotKmeans(prediction, k, "Title vs. Company", 600, 800, "Title_Index", "Company_Index", filename);
 
+        final ByteArrayResource inputStream =
+                new ByteArrayResource(
+                        Files.readAllBytes(
+                                Paths.get(filename)));
 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //////////////////////////////////  Remove Test   /////////////////////////////////////
-    ///////////////////////////////////////////////////////////////////////////////////////
-    @GetMapping(value = "/test")
-    public Map<String, Long> test() {
-        return edaService.getMostDemandingCompanies(10);
-    }
-
-    @GetMapping(value = "/test1")
-    public List<String> test1() {
-        Dataset<String> d = edaService.getDataset().toJSON();
-
-        return  d.collectAsList();
-
-    }
-
-    @GetMapping(value = "/test2")
-    public Object test2() {
-        Object d = edaService.getDataset().toJSON().head(1);
-
-        return  d;
-
-    }
-
-    @GetMapping(value = "/test3")
-    public long test3() {
-
-        return edaService.getDataset().count();
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .contentLength(inputStream.contentLength())
+                .body(inputStream);
     }
 
 }

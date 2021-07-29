@@ -13,7 +13,6 @@ public class Job implements Serializable {
     private String country;
     private List<String> skills;
 
-
     public Job(String title, String company, String location, JobType type, JobLevel level, String yearsOfExperience, String country, List<String> skills) {
         this.title = title;
         this.company = company;
@@ -24,7 +23,6 @@ public class Job implements Serializable {
         this.country = country;
         this.skills = skills;
     }
-
 
     public String getTitle() {
         return title;

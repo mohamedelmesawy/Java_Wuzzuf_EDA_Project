@@ -1,6 +1,5 @@
 package com.iti.wuzzufeda.services;
 
-import java.awt.*;
 import java.io.IOException;
 import java.util.*;
 import java.util.List;
@@ -10,10 +9,12 @@ import com.iti.wuzzufeda.SparkConfiguration;
 import com.iti.wuzzufeda.dao.JobsDAO;
 import com.iti.wuzzufeda.models.Job;
 
-
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.spark.ml.clustering.KMeans;
+import org.apache.spark.ml.clustering.KMeansModel;
+import org.apache.spark.ml.feature.VectorAssembler;
 import org.apache.spark.sql.*;
-import org.knowm.xchart.PieChart;
-import org.knowm.xchart.PieChartBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -33,17 +34,14 @@ public class EDAService {
 
     @Autowired
     public Dataset<Row> setDataset() {
-        this.dataset = JobsDAO.readCSVUsingSpark(filePath, sparkSession, "%");
-
-        return dataset;
+        return JobsDAO.readCSVUsingSpark(filePath, sparkSession, "%");
     }
-
 
     @Autowired
     public void cleanData() {
         this.dataset = PreprocessingHelper.removeNulls(this.dataset);
         this.dataset = PreprocessingHelper.removeDuplicates(this.dataset);
-        this.dataset = PreprocessingHelper.encodeCategoricalFeatures(this.dataset, Arrays.asList("Type", "Level"));
+     // this.dataset = PreprocessingHelper.encodeCategoricalFeatures(this.dataset, Arrays.asList("Type", "Level"));
     }
 
 
@@ -137,6 +135,7 @@ public class EDAService {
                         Map.Entry::getValue,
                         (oldValue, newValue) -> oldValue, LinkedHashMap::new)
                 );
+
         return data;
     }
 
@@ -155,18 +154,36 @@ public class EDAService {
                         Map.Entry::getValue,
                         (oldValue, newValue) -> oldValue, LinkedHashMap::new)
                 );
+
         return data;
     }
 
 
-
     // ---------------------------- MACHINE LEARNING MODELS -------------------------- //
-    public String getRegressionModel() {
-        return "Regression Model";
-    }
+    public Dataset<Row> getKMeansModel(Dataset<Row> dataset, List<String> features, int k) {
+        // Feature Encoding
+        dataset = PreprocessingHelper.encodeCategoricalFeatures(dataset, features);
 
-    public String getKMeansModel() {
-        return "KMeans Model";
+        // Create the VectorAssembler which contains the features
+        VectorAssembler vectorAssembler = new VectorAssembler();
+        vectorAssembler.setInputCols(new String[] { "Title_indexed", "Company_indexed" });
+        vectorAssembler.setOutputCol("features");
+
+        // Transform the trained Dataset
+        Dataset<Row> transformedDataset = vectorAssembler.transform(dataset.na().drop());
+
+        // Train the KMeans Model
+        KMeans kmeans = new KMeans().setK(k).setSeed(1L);
+        kmeans.setFeaturesCol("features");
+        kmeans.setPredictionCol("Predicted");
+
+        // Clustering using KMeans
+        KMeansModel model = kmeans.fit(transformedDataset);
+
+        // Predict
+        Dataset<Row> prediction = model.transform(transformedDataset);
+
+        return prediction;
     }
 
 
@@ -183,29 +200,73 @@ public class EDAService {
         }
     }
 
-    public List<Map<String, String>> getListOfJobsFromDataSet(){
+    public List<Map<String, Object>> getListOfJobsFromDataSet() throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        List<Map<String, Object>> data = new ArrayList<>();
+        List<String> stringDataset = this.dataset.toJSON().collectAsList();
 
-        List<Map<String, String>> data =  dataset.toJSON()
-                .collectAsList()
-                .stream()
-                .map(value -> {
-                    value = value.substring(1, value.length()-1);           //remove curly brackets
-                    String[] keyValuePairs = value.split("\",\"");     //split the string to creat key-value pairs  ","
-                    Map<String, String> map = new HashMap<>();
-
-                    for(String pair : keyValuePairs)                         //iterate over the pairs
-                    {
-                        String[] entry = pair.split(":");              //split the pairs to get key and value
-                        map.put(entry[0].trim().replaceAll("^\"+|\"+$", ""),
-                                entry[1].trim().replaceAll("^\"+|\"+$", "")
-                        );                                                   //add them to the hashmap and trim whitespaces
-
-                    }
-
-                    return map;
-                }).collect(Collectors.toList());
+        for (String s : stringDataset) {
+            Map<String, Object> map = mapper.readValue(s, new TypeReference<Map<String, Object>>(){ });
+            data.add(map);
+        }
 
         return data;
+    }
+
+
+    // ---------------------------- Data-Preprocessing -------------------------- //
+    public List<Map<String, Object>> factorizeYearsColumn(List<Map<String, Object>> data){
+        List<Map<String, Object>> factorizedDataset = data
+                .stream()
+                .map(row -> {
+                        int yearsOfExp;
+                        String txt = row.get("YearsExp").toString().replaceAll("[^\\-0123456789]","");
+
+                        if(txt.isEmpty())
+                            yearsOfExp = 0;
+                        else if (txt.contains("-")){
+                            String[] nums = txt.split("-");
+                            yearsOfExp =  ( Integer.parseInt(nums[0]) + Integer.parseInt(nums[1]) ) / 2;
+                        }
+                        else
+                            yearsOfExp = Integer.parseInt(txt);
+
+                        row.remove("Skills");
+                        row.remove("Level");
+                        row.remove("Type");
+                        row.remove("Location");
+                        row.remove("Country");
+                     // row.remove("Company");
+                     // row.remove("Title");
+                        row.remove("_c0");
+
+                        row.put("YearsExpFactorized", yearsOfExp);
+
+                        return row;
+                    }
+                ).collect(Collectors.toList());
+
+        // To convert JSON to DataFrame using List<Row> & Scheme ------------------------------------------
+        // List<String> cols = new ArrayList(FactorizedDataSet.get(0).keySet());
+
+        // List<Row> rows = FactorizedDataSet
+        //         .stream()
+        //         .map(row -> cols.stream().map(c -> (Object) row.get(c).toString()))
+        //         .map(row -> row.collect(Collectors.toList()))
+        //         .map(row -> JavaConverters.asScalaBufferConverter(row).asScala().toSeq())
+        //         .map(Row$.MODULE$::fromSeq)
+        //         .collect(Collectors.toList());
+
+        // StructType schema = new StructType(
+        //         cols.stream()
+        //                 .map(c -> new StructField(c, DataTypes.StringType, true, Metadata.empty()))
+        //                 .collect(Collectors.toList())
+        //                 .toArray(new StructField[0])
+        // );
+
+        // Dataset<Row> NewData = sparkSession.createDataFrame(rows, schema);
+
+        return factorizedDataset;
     }
 
 }

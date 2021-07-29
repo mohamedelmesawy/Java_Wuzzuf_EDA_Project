@@ -1,5 +1,7 @@
 package com.iti.wuzzufeda.services;
 
+import org.apache.spark.sql.Dataset;
+import org.apache.spark.sql.Row;
 import org.knowm.xchart.*;
 import org.knowm.xchart.style.AxesChartStyler;
 import org.knowm.xchart.style.Styler;
@@ -8,16 +10,16 @@ import org.knowm.xchart.style.Styler;
 import java.awt.*;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 public class ChartService {
 
-
-    // ------------------------------- PIE CHART ---------------------------------- //
-
-    public static void getJobsPieChart(Map<String,Long> data, String title, int height, int width, String savingName ) throws IOException {
+    // -------------------------------------- PIE CHART ----------------------------------------- //
+    public static void getJobsPieChart(Map<String,Long> data, String title, int height, int width,
+                                       String savingName ) throws IOException {
 
         // Create Chart
         PieChart chart = new PieChartBuilder()
@@ -48,12 +50,10 @@ public class ChartService {
     }
 
 
-    // ------------------------------- BAR CHART ---------------------------------- //
-
-
+    // -------------------------------------- BAR CHART ----------------------------------------- //
     public static void  getBarChart(Map<String,Long> data, String title,
-                                    String xlabel,String ylabel,int count, int height, int width, String savingName) throws IOException {
-
+                                    String xlabel, String ylabel, int count, int height, int width,
+                                    String savingName) throws IOException {
         // Create Chart
         CategoryChart chart = new CategoryChartBuilder()
                 .width(width)
@@ -85,19 +85,48 @@ public class ChartService {
         BitmapEncoder.saveBitmapWithDPI(chart, savingName, BitmapEncoder.BitmapFormat.PNG, 300);
     }
 
+    // ------------------------------- SCATTER CHART for KMeans --------------------------------- //
+    public static void graphScatterPlotKmeans(Dataset<Row> prediction, int k, String title, int height,
+                                   int width, String xlabel, String ylabel,
+                                   String savingName) throws IOException{
+        Map<List<Double>, List<Double>> map = new HashMap<>();
 
+        for (int i = 0; i < k; i++) {
+            List<Double> x = prediction.filter("Predicted ='" + i +"'").select("Title_indexed")
+                    .collectAsList().stream().map(r -> Double.valueOf(r.mkString())).collect(Collectors.toList());
+            List<Double> y = prediction.filter("Predicted ='" + i +"'").select("Company_indexed")
+                    .collectAsList().stream().map(r -> Double.valueOf(r.mkString())).collect(Collectors.toList());
 
+            map.put(x, y);
+        }
 
+        // Create Chart
+        XYChart chart = new XYChartBuilder()
+                .width(width)
+                .height(height)
+                .title(title)
+                .xAxisTitle(xlabel)
+                .yAxisTitle(ylabel)
+                .theme(Styler.ChartTheme.GGPlot2)
+                .build();
 
+        // Customize Chart
+        chart.getStyler().setDefaultSeriesRenderStyle(XYSeries.XYSeriesRenderStyle.Scatter);
+        chart.getStyler().setHasAnnotations(true);
+        chart.getStyler().setXAxisLabelRotation(90);
+        chart.getStyler().setAnnotationsFont(new Font(Font.MONOSPACED, Font.BOLD, 14));
 
+        // Series
+        int counter = 1;
+        for (Map.Entry<List<Double>, List<Double>> set : map.entrySet()) {
+            chart.addSeries(String.valueOf(counter), set.getKey(), set.getValue());
 
+            counter++;
+        }
 
+        // Show it
+        // new SwingWrapper(chart).displayChart();
 
-
-
-
-
-
-
-
+        BitmapEncoder.saveBitmapWithDPI(chart, savingName, BitmapEncoder.BitmapFormat.PNG, 300);
+    }
 }
