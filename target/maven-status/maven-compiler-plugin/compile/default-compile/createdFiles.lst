@@ -8,3 +8,4 @@ com\iti\wuzzufeda\services\ChartService.class
 com\iti\wuzzufeda\controllers\RESTController.class
 com\iti\wuzzufeda\SparkConfiguration.class
 com\iti\wuzzufeda\services\PreprocessingHelper.class
+com\iti\wuzzufeda\services\EDAService$1.class
