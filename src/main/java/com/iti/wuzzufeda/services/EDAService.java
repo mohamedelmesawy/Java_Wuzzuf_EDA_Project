@@ -33,15 +33,15 @@ public class EDAService {
 
 
     @Autowired
-    public Dataset<Row> setDataset() {
-        return JobsDAO.readCSVUsingSpark(filePath, sparkSession, "%");
+    public void setDataset() {
+        this.dataset = JobsDAO.readCSVUsingSpark(filePath, sparkSession, "%");
     }
 
     @Autowired
     public void cleanData() {
         this.dataset = PreprocessingHelper.removeNulls(this.dataset);
         this.dataset = PreprocessingHelper.removeDuplicates(this.dataset);
-     // this.dataset = PreprocessingHelper.encodeCategoricalFeatures(this.dataset, Arrays.asList("Type", "Level"));
+        this.dataset = PreprocessingHelper.encodeCategoricalFeatures(this.dataset, Arrays.asList("Type", "Level"));
     }
 
 
