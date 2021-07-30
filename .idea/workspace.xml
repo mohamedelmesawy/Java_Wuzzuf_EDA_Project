@@ -5,34 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f6239aea-628f-4d89-a290-ffcad2aa4c9f" name="Default Changelist" comment="Remove duplicates">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/kmeans.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_6_2021_5_02_PM_[Default_Changelist]/EDAService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_6_2021_5_02_PM_[Default_Changelist]/RESTController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_6_2021_5_02_PM_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_6_2021_5_02_PM__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_6_2021_5_05_PM_[Default_Changelist]/EDAService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_6_2021_5_05_PM_[Default_Changelist]/RESTController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_6_2021_5_05_PM_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_6_2021_5_05_PM__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_8_2021_11_38_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_8_2021_11_38_PM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_8_2021_11_39_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_8_2021_11_39_PM__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/SparkConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/SparkConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/WuzzufEDAApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/WuzzufEDAApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/controllers/RESTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/controllers/RESTController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/models/Job.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/models/Job.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/services/ChartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/services/ChartService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/services/EDAService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/services/EDAService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/services/PreprocessingHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/services/PreprocessingHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/SparkConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/SparkConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/WuzzufEDAApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/WuzzufEDAApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/controllers/RESTController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/controllers/RESTController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/services/ChartService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/services/ChartService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/models/Job.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/models/Job.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/services/EDAService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/services/EDAService$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/services/EDAService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/services/EDAService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/services/PreprocessingHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/iti/wuzzufeda/services/PreprocessingHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/companies.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/companies.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/jobs.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/jobs.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <ignored path="C:\Users\Mohamed\Desktop\Java_Wuzzuf_EDA_Project\Java_Wuzzuf_EDA_Project\.idea\shelf/" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -54,11 +35,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/services/PreprocessingHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="166">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
               <folding>
+                <element signature="e#609#610#0" expanded="true" />
                 <element signature="method#encodeCategoricalFeatures#0;class#PreprocessingHelper#0" />
-                <element signature="e#926#1430#1" />
                 <element signature="method#sortMap#0;class#PreprocessingHelper#0" />
                 <element signature="method#sortMap#1;class#PreprocessingHelper#0" />
               </folding>
@@ -69,27 +50,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/SparkConfiguration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+            <state relative-caret-position="210">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#415#459#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/dao/JobsDAO.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/models/JobLevel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
-              <folding>
-                <element signature="method#readCSVUsingSpark#0;class#JobsDAO#0" />
-                <element signature="method#getListOfJobsFromCSV#0;class#JobsDAO#0" />
-                <element signature="method#encodeJobLevel#0;class#JobsDAO#0" />
-                <element signature="method#encodeJobType#0;class#JobsDAO#0" />
-              </folding>
+            <state relative-caret-position="48">
+              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -97,8 +71,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/controllers/RESTController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="131" column="16" selection-start-line="131" selection-start-column="16" selection-end-line="131" selection-end-column="16" />
+            <state relative-caret-position="329">
+              <caret line="70" column="27" selection-start-line="70" selection-start-column="27" selection-end-line="70" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#summary#0;class#RESTController#0" />
@@ -119,19 +93,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/models/JobLevel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/models/Job.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="-432">
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
               <folding>
                 <element signature="method#Job#0;class#Job#0" />
                 <element signature="method#toString#0;class#Job#0" />
@@ -141,24 +106,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/services/ChartService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="86" selection-start-line="86" selection-end-line="86" />
-              <folding>
-                <element signature="method#getJobsPieChart#0;class#ChartService#0" />
-                <element signature="method#getBarChart#0;class#ChartService#0" />
-                <element signature="method#graphScatterPlotKmeans#0;class#ChartService#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/WuzzufEDAApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+            <state relative-caret-position="336">
+              <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -170,7 +121,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/models/JobType.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="216">
-              <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+              <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -178,10 +129,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/services/EDAService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="40" column="28" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
+            <state relative-caret-position="134">
+              <caret line="20" column="15" lean-forward="true" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#812#825#1" expanded="true" />
                 <element signature="method#cleanData#0;class#EDAService#0" />
                 <element signature="method#getSummary#0;class#EDAService#0" />
                 <element signature="method#getMostDemandingCompanies#0;class#EDAService#0" />
@@ -201,6 +152,24 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.3.8/spring-beans-5.3.8.jar!/org/springframework/beans/factory/annotation/AutowiredAnnotationBeanPostProcessor.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="173">
+              <caret line="261" selection-start-line="261" selection-end-line="261" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.3.8/spring-beans-5.3.8.jar!/org/springframework/beans/factory/annotation/InjectionMetadata.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="173">
+              <caret line="76" selection-start-line="76" selection-end-line="76" />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -213,7 +182,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>spark</find>
       <find>EDAService</find>
       <find>apache</find>
       <find>readCSVUsingSpark</find>
@@ -243,6 +211,7 @@
       <find>factorizeYearsColumn</find>
       <find>regres</find>
       <find>sparkHome</find>
+      <find>setDataset</find>
     </findStrings>
   </component>
   <component name="Git.Pull.Settings">
@@ -287,11 +256,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/models/YearsOfExperience.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/services/ChartService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/controllers/RESTController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/services/EDAService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/services/PreprocessingHelper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/SparkConfiguration.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/WuzzufEDAApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/models/Job.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/WuzzufEDAApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/SparkConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/services/EDAService.java" />
       </list>
     </option>
   </component>
@@ -324,7 +293,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -406,6 +374,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -500,7 +469,9 @@
       <workItem from="1626119099196" duration="19501000" />
       <workItem from="1626750007421" duration="724000" />
       <workItem from="1627211024858" duration="599000" />
-      <workItem from="1627543105425" duration="11263000" />
+      <workItem from="1627543105425" duration="12251000" />
+      <workItem from="1627602200883" duration="334000" />
+      <workItem from="1627602701417" duration="988000" />
     </task>
     <task id="LOCAL-00001" summary="Third commit, testing from the other side">
       <created>1625093773458</created>
@@ -548,13 +519,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49391000" />
+    <option name="totallyTimeSpent" value="51701000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.85549736" visible="true" weight="0.15724947" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.85549736" visible="true" weight="0.16044776" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -564,7 +535,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49840087" visible="true" weight="0.34031415" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49840087" visible="true" weight="0.42827225" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39895287" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -656,23 +627,6 @@
     </SUITE>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/scala-lang/scala-library/2.12.7/scala-library-2.12.7.jar!/scala/collection/mutable/AbstractMap.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="163" selection-start-line="163" selection-end-line="163" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/scala-lang/scala-library/2.12.7/scala-library-2.12.7.jar!/scala/collection/mutable/HashMap.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="464" selection-start-line="464" selection-end-line="464" />
-          <folding>
-            <element signature="e#20154#20155#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-sql_2.11/2.1.0/spark-sql_2.11-2.1.0.jar!/org/apache/spark/sql/SparkSession$.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -834,13 +788,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-sql_2.11/2.3.0/spark-sql_2.11-2.3.0.jar!/org/apache/spark/sql/RelationalGroupedDataset.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -862,13 +809,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/models/YearsOfExperience.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/models/YearsOfExperience.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/jobs.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -896,10 +837,67 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/Snipaste_2021-06-29_13-10-36.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/WuzzufEDAApplication.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/dao/JobsDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="88" selection-start-line="88" selection-end-line="88" />
+          <folding>
+            <element signature="method#readCSVUsingSpark#0;class#JobsDAO#0" />
+            <element signature="method#getListOfJobsFromCSV#0;class#JobsDAO#0" />
+            <element signature="method#encodeJobLevel#0;class#JobsDAO#0" />
+            <element signature="method#encodeJobType#0;class#JobsDAO#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/services/ChartService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="86" selection-start-line="86" selection-end-line="86" />
+          <folding>
+            <element signature="method#getJobsPieChart#0;class#ChartService#0" />
+            <element signature="method#getBarChart#0;class#ChartService#0" />
+            <element signature="method#graphScatterPlotKmeans#0;class#ChartService#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/models/JobLevel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/models/JobType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
-          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/models/Job.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-432">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="method#Job#0;class#Job#0" />
+            <element signature="method#toString#0;class#Job#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/WuzzufEDAApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -908,34 +906,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/SparkConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        <state relative-caret-position="210">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#415#459#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/services/PreprocessingHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="166">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
           <folding>
+            <element signature="e#609#610#0" expanded="true" />
             <element signature="method#encodeCategoricalFeatures#0;class#PreprocessingHelper#0" />
-            <element signature="e#926#1430#1" />
             <element signature="method#sortMap#0;class#PreprocessingHelper#0" />
             <element signature="method#sortMap#1;class#PreprocessingHelper#0" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.3.8/spring-beans-5.3.8.jar!/org/springframework/beans/factory/annotation/AutowiredAnnotationBeanPostProcessor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="261" selection-start-line="261" selection-end-line="261" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.3.8/spring-beans-5.3.8.jar!/org/springframework/beans/factory/annotation/InjectionMetadata.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="76" selection-start-line="76" selection-end-line="76" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/services/EDAService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="40" column="28" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
+        <state relative-caret-position="134">
+          <caret line="20" column="15" lean-forward="true" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#812#825#1" expanded="true" />
             <element signature="method#cleanData#0;class#EDAService#0" />
             <element signature="method#getSummary#0;class#EDAService#0" />
             <element signature="method#getMostDemandingCompanies#0;class#EDAService#0" />
@@ -954,60 +965,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/services/ChartService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="86" selection-start-line="86" selection-end-line="86" />
-          <folding>
-            <element signature="method#getJobsPieChart#0;class#ChartService#0" />
-            <element signature="method#getBarChart#0;class#ChartService#0" />
-            <element signature="method#graphScatterPlotKmeans#0;class#ChartService#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/models/JobType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/models/JobLevel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/models/Job.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="method#Job#0;class#Job#0" />
-            <element signature="method#toString#0;class#Job#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/dao/JobsDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
-          <folding>
-            <element signature="method#readCSVUsingSpark#0;class#JobsDAO#0" />
-            <element signature="method#getListOfJobsFromCSV#0;class#JobsDAO#0" />
-            <element signature="method#encodeJobLevel#0;class#JobsDAO#0" />
-            <element signature="method#encodeJobType#0;class#JobsDAO#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/iti/wuzzufeda/controllers/RESTController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="131" column="16" selection-start-line="131" selection-start-column="16" selection-end-line="131" selection-end-column="16" />
+        <state relative-caret-position="329">
+          <caret line="70" column="27" selection-start-line="70" selection-start-column="27" selection-end-line="70" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#summary#0;class#RESTController#0" />
