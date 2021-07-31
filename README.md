@@ -1,6 +1,7 @@
 # WUZZUF EDA Web Service
 
-![image](https://user-images.githubusercontent.com/28452932/127750743-199af868-383c-4692-9c0b-1b33cf8a7e00.png)
+https://user-images.githubusercontent.com/28452932/127752213-76962b2e-94c7-4f8c-bae6-3c4f1a4df146.mp4
+
 
 <div align="center" id="top"> 
   <!-- <a href="https://resources.netlify.app">Demo</a> -->
@@ -47,7 +48,7 @@ This project is an Exploratory Data Analysis for Wuzzuf jobs in Egypt data set a
 :heavy_check_mark: Show step 8 in bar chart. \
 :heavy_check_mark: Print skills one by one and how many each repeated and order the output to find out the most important skills required? \
 :heavy_check_mark: Factorize the YearsExp feature and convert it to numbers in new col. \
-:heavy_check_mark: Apply K-means for job title and companies \
+:heavy_check_mark: Apply K-means for job title and companies.
 
 
 ## :rocket: Technologies ##
