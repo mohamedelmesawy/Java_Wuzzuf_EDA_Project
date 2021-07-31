@@ -31,20 +31,6 @@ This project is an Exploratory Data Analysis for Wuzzuf jobs in Egypt data set a
 
 ## :sparkles: Features ##
 
-
-    00-  Java needed classes (POJO , DAO, web service and a tester client for the web service).
-    01- The data set was converted into dataframe and Spark RDD and displayed in charts.
-    02- Display structure and summary of the data.
-    03- Clean the data (null, duplications)
-    04- Count the jobs for each company and display that in order
-    05- Show step 4 in a pie chart
-    06- Find out What are it the most popular job titles?
-    07- Show step 6 in bar chart
-    08- Find out the most popular areas?
-    09- Show step 8 in bar chart
-    10- Print skills one by one and how many each repeated and order the output to find out the most important skills required?
-    11- Factorize the YearsExp feature and convert it to numbers in new col.
-    12- Apply K-means for job title and companies
     
 :heavy_check_mark: Java needed classes (POJO , DAO, web service and a tester client for the web service). \
 :heavy_check_mark: The data set was converted into dataframe and Spark RDD and displayed in charts. \
@@ -63,10 +49,17 @@ This project is an Exploratory Data Analysis for Wuzzuf jobs in Egypt data set a
 
 ## :rocket: Technologies ##
 
-The following tools were used in this project:
+The following tools were used in the REST-API project:
 
 - [Java](https://www.java.com/en/)
+- [SpringBoot](https://spring.io/projects/spring-boot)
 - [Spark](https://spark.apache.org/downloads.html)
+
+for the Client application: 
+- [HTML](https://www.w3schools.com/tags/tag_main.asp)
+- [CSS](https://www.w3schools.com/css/)
+- [JavaScript](https://www.javascript.com/)
+- [AJAX](https://api.jquery.com/jquery.ajax/)
 
 ## :white_check_mark: Requirements ##
 
@@ -76,17 +69,15 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) an
 
 ```bash
 # Clone this project
-$ git clone https://github.com/mohamedelmesawy/Java_EDA_Code.git
+$ git clone https://github.com/mohamedelmesawy/Java_Wuzzuf_EDA_Project.git
 
-# Access each Demo separately by accessing its folder
-$ cd target\classes
 
-# Run each Demo separately by accessing its folder
-$ java MainClass.class
+# Run the Entry point WuzzufEDAApplication
+
 ```
 
 
-Made with :heart: by <a href="https://github.com/mohamedelmesawy" target="_blank">MOhamed ElMesawy</a>
+Made with :heart: by <a href="https://github.com/mohamedelmesawy" target="_blank">MOhamed ElMesawy</a> and <a href="https://github.com/ahmednawaad" target="_blank">Ahmed Nabeel</a> and <a href="https://github.com/KhaledSheha" target="_blank">Khaled Sheha</a>
 
 &#xa0;
 
