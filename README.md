@@ -1,5 +1,7 @@
 # Java_Wuzzuf_EDA_Project
 
+![image](https://user-images.githubusercontent.com/28452932/127750743-199af868-383c-4692-9c0b-1b33cf8a7e00.png)
+
 <div align="center" id="top"> 
   <!-- <a href="https://resources.netlify.app">Demo</a> -->
 </div>
