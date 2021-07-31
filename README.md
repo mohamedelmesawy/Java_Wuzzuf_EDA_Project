@@ -28,6 +28,7 @@
 This project is an Exploratory Data Analysis for Wuzzuf jobs in Egypt data set at Kaggle https://www.kaggle.com/omarhanyy/wuzzuf-jobs
 - The project was built as a web service and consumed with a web application.
 
+- The client application exists at https://github.com/mohamedelmesawy/wuzzuf_eda_client
 
 
 
@@ -73,9 +74,12 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) an
 # Clone this project
 $ git clone https://github.com/mohamedelmesawy/Java_Wuzzuf_EDA_Project.git
 
+# Run the Entry point WuzzufEDAApplication  [web service]
 
-# Run the Entry point WuzzufEDAApplication
+# Clone the [client project]
+$ git clone https://github.com/mohamedelmesawy/wuzzuf_eda_client.git
 
+# Run the Entry point Index.html in a server [client]
 ```
 
 
