@@ -82,7 +82,7 @@ $ git clone https://github.com/mohamedelmesawy/Java_Wuzzuf_EDA_Project.git
 # Clone the [client project]
 $ git clone https://github.com/mohamedelmesawy/wuzzuf_eda_client.git
 
-# Run the Entry point Index.html in a server [client]
+# Run the Entry point Index.html in a  server [client]
 ```
 
 
