@@ -1,5 +1,7 @@
 # WUZZUF EDA Web Service
 
+![image](https://user-images.githubusercontent.com/28452932/127752409-a8c915f3-d902-4930-8d99-5b3825064a96.png)
+
 https://user-images.githubusercontent.com/28452932/127752213-76962b2e-94c7-4f8c-bae6-3c4f1a4df146.mp4
 
 
